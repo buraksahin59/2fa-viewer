@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0d0d0f;
+  color: #e8e8e8;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  justify-content: center;
+}
+
+.logo-icon {
+  color: #6366f1;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f0f0f0;
+}
+
+/* Card */
+.card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Input */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.input {
+  background: #09090b;
+  border: 1.5px solid #3f3f46;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  color: #f4f4f5;
+  outline: none;
+  transition: border-color 0.2s;
+  letter-spacing: 0.05em;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: #6366f1;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.error-msg {
+  font-size: 0.8125rem;
+  color: #f87171;
+}
+
+/* Output */
+.output-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.timer-row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+/* Progress Ring */
+.ring {
+  transform: rotate(-90deg);
+  flex-shrink: 0;
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #27272a;
+  stroke-width: 8;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: #6366f1;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.9s linear, stroke 0.3s;
+}
+
+.ring-urgent {
+  stroke: #ef4444;
+}
+
+.ring-count {
+  transform: rotate(90deg);
+  transform-origin: 64px 64px;
+  font-size: 28px;
+  font-weight: 700;
+  fill: #f4f4f5;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.ring-label {
+  transform: rotate(90deg);
+  transform-origin: 64px 64px;
+  font-size: 11px;
+  fill: #71717a;
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Code Block */
+.code-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.375rem;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background: #09090b;
+  border: 1.5px solid #3f3f46;
+  border-radius: 12px;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+  min-width: 152px;
+}
+
+.code-block:hover {
+  border-color: #6366f1;
+  background: #111114;
+}
+
+.code-text {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #f4f4f5;
+  line-height: 1;
+}
+
+.copy-hint {
+  font-size: 0.75rem;
+  color: #71717a;
+  letter-spacing: 0.03em;
+}
+
+/* Period selector */
+.period-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.period-label {
+  font-size: 0.8125rem;
+  color: #71717a;
+}
+
+.period-btn {
+  background: #27272a;
+  border: 1.5px solid #3f3f46;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8125rem;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.period-btn:hover {
+  border-color: #6366f1;
+  color: #f4f4f5;
+}
+
+.period-btn.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.5rem 0;
+}
+
+.empty-state p {
+  font-size: 0.9375rem;
+  color: #71717a;
+}
+
+.empty-hint {
+  font-size: 0.8125rem !important;
+  color: #52525b !important;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  color: #3f3f46;
+}
