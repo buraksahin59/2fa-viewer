@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // GitHub Pages repo adınızı buraya yazın (örn: '/2fa-viewer/')
 // Kendi domain'iniz varsa '/' yapın
-const base = '/2fa-viewer/'
+const base = '/'
 
 export default defineConfig({
   plugins: [react()],
