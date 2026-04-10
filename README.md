@@ -2,7 +2,7 @@
 
 A free, privacy-first online 2FA authenticator and TOTP code generator. Generates time-based one-time passwords (TOTP) directly in your browser — no server, no tracking, no account required.
 
-**Live Demo:** [https://buraksahin59.github.io/2fa-viewer/](https://buraksahin59.github.io/2fa-viewer/)
+**Live Demo:** [https://2fa.aren.work/](https://2fa.aren.work/)
 
 ---
 
@@ -11,7 +11,7 @@ A free, privacy-first online 2FA authenticator and TOTP code generator. Generate
 - **Instant TOTP generation** — Paste your 2FA secret key and get a 6-digit code immediately
 - **Real-time countdown** — Animated progress ring shows remaining time (30s or 60s periods)
 - **Auto-refresh** — New code is generated automatically when the period expires
-- **Shareable URL** — Secret key is embedded in the URL path (`site.com/YOURSECRETKEY`) for quick access
+- **Shareable URL** — Secret key is embedded in the URL path (`https://2fa.aren.work/YOURSECRETKEY`) for quick access
 - **One-click copy** — Click the code to copy it to clipboard
 - **100% client-side** — All cryptographic operations run in your browser via Web Crypto API
 - **No dependencies** — No third-party TOTP libraries, no trackers, no analytics
@@ -41,7 +41,7 @@ Secret Key (Base32) → HMAC-SHA1 → Dynamic Truncation → 6-digit OTP
 The secret key is appended to the URL path:
 
 ```
-https://buraksahin59.github.io/2fa-viewer/JBSWY3DPEHPK3PXP
+https://2fa.aren.work/JBSWY3DPEHPK3PXP
 ```
 
 Opening this URL directly loads and activates the key automatically — no need to paste it again.
@@ -55,7 +55,7 @@ Opening this URL directly loads and activates the key automatically — no need 
 | Framework | React 19 + Vite 7 |
 | Crypto | Web Crypto API (`crypto.subtle`, HMAC-SHA1) |
 | Styling | Vanilla CSS, SVG progress ring |
-| Deploy | GitHub Pages via `gh-pages` |
+| Deploy | GitHub Pages via `main` |
 | Dependencies | Zero runtime dependencies |
 
 ---
@@ -91,7 +91,7 @@ Outputs to `dist/`. A `404.html` copy is generated automatically for SPA routing
 
 1. Update `vite.config.js` with your repo name:
    ```js
-   const base = '/2fa-viewer/'   // your repo name
+   const base = '/'   // your repo name
    ```
 
 2. Run:
@@ -100,7 +100,7 @@ Outputs to `dist/`. A `404.html` copy is generated automatically for SPA routing
    npm run deploy
    ```
 
-3. In your GitHub repo: **Settings → Pages → Branch: `gh-pages`**
+3. In your GitHub repo: **Settings → Pages → Branch: `main`**
 
 ---
 
